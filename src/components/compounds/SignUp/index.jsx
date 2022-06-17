@@ -31,7 +31,7 @@ export const SignUp = () => (
       <Input.FullRound type="password" placeholder="" />
     </div>
     <div className="signup-wrapper-button">
-      <Button.MainGreen text="Sign Up" />
+      <Button type="submit" stretch text="Sign Up" />
     </div>
     <div className="signup-wrapper-divider">
       <Text.Divider text="OR" />
