@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AUTH_ACTIONS } from 'store/reducer/auth/authSlice';
 import { useFormik } from 'formik';
 import { VALIDATIONS } from 'constants/validations';
-// import { getAuthorizationToken } from 'apis/index';
 import * as yup from 'yup';
 
 const validationSchema = yup.object({
@@ -27,7 +26,6 @@ export const SignIn = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      // alert(getAuthorizationToken());
       dispatch(authUser(values));
     },
   });
