@@ -2,6 +2,9 @@ export const ROUTES = {
   signUp: {
     path: 'signup',
   },
+  signUp2: {
+    path: 'signup2',
+  },
   signIn: {
     path: 'login',
   },

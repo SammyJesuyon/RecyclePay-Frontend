@@ -36,11 +36,11 @@ export const Heading = ({ text, size, weight, level, children, color, ...props }
 
 export const Divider = ({ text, children, ...props }) => (
   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '15px' }}>
-    <Hline />
+    <Hline className="hline" />
     <p style={{ fontSize: '16px', fontWeight: 450, lineHeight: '24px', color: '#025002' }} {...props}>
       {text || children}
     </p>
-    <Hline />
+    <Hline className="hline" />
   </div>
 );
 
