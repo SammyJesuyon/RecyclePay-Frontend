@@ -1,17 +1,20 @@
 export const ROUTES = {
   signUp: {
-    path: 'signup',
+    path: '/signup',
   },
   signIn: {
-    path: 'login',
+    path: '/login',
   },
   resetPassword: {
-    path: 'reset-password',
+    path: '/password',
+  },
+  forgotPassword: {
+    path: 'forgot-password',
   },
   dashboard: {
     path: '/dashboard',
   },
   overview: {
-    path: 'overview',
+    path: '/overview',
   },
 };
