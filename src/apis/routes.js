@@ -8,7 +8,13 @@ const auth = {
    */
 
   login: (data) => recyclePayRequest.post('/auth/login/', data),
-  forgetPassword: () => {},
+
+  /**
+   * Send Forgot password Email
+   * @param {{email: string}} data
+   * @returns {Promise<AxiosResponse<any>>}
+   */
+  forgotPassword: (data) => recyclePayRequest.post('/auth/forgot-password', data),
   /**
    * Register User
    * @param {{
@@ -19,7 +25,8 @@ const auth = {
    * }} data - object to register
    * @returns {Promise<AxiosResponse<{data: {name: string }}>>}
    */
-  register: (data) => recyclePayRequest.post('/auth/register/', data),
+  register: (data) => recyclePayRequest.post('/auth/register/', { email: data }),
+
   /**
    * Reset Password
    * @param {{new_password: string, otp: string, confirm_password: string}} data
