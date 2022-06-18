@@ -27,14 +27,12 @@ export const SignUp = () => {
     formData2.append('last_name', formData.last_name);
     formData2.append('email', formData.email);
     formData2.append('password', formData.password);
-    console.log(formData2);
     const res = await api.auth.register(formData2);
     if (res.status === 201) {
-      navigate('/login');
+      navigate('/signup2');
     } else {
       toast.success('Email already registered');
     }
-    console.log(res);
   };
 
   return (
