@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import routes from '../../../apis/routes';
 
 export const PasswordResetOne = () => {
-  const [email, setEmail] = useState('');
+  const [userEmail, setEmail] = useState('');
 
   useEffect(() => {}, []);
 
@@ -13,7 +13,7 @@ export const PasswordResetOne = () => {
     e.preventDefault();
 
     const reset = async () => {
-      const res = await routes.auth.forgotPassword(email);
+      const res = await routes.auth.forgotPassword({ email: userEmail });
       toast.success(res);
     };
 
