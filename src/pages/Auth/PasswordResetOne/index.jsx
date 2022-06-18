@@ -14,7 +14,12 @@ export const PasswordResetOne = () => {
 
     const reset = async () => {
       const res = await routes.auth.forgotPassword({ email: userEmail });
-      toast.success(res);
+      if (res.status === 200) {
+        toast.success('Email sent! Please check your mailbox');
+      } else {
+        console.log(res.status, 'information');
+        toast.error('Trouble');
+      }
     };
 
     reset().then((r) => console.log(r));

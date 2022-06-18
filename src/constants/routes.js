@@ -1,9 +1,9 @@
 export const ROUTES = {
   signUp: {
-    path: '/signup',
+    path: 'signup',
   },
   signIn: {
-    path: '/login',
+    path: 'login',
   },
   resetPassword: {
     path: '/password',
@@ -15,6 +15,6 @@ export const ROUTES = {
     path: '/dashboard',
   },
   overview: {
-    path: '/overview',
+    path: 'overview',
   },
 };
