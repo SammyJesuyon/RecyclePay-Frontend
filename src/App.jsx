@@ -66,7 +66,7 @@ const App = () => (
           <Route path="reset-1" element={<PasswordResetOne />} />
           <Route path="reset-2" element={<PasswordResetTwo />} />
           <Route path="reset-3" element={<PasswordResetThree />} />
-          <Route path="reset-4" element={<PasswordResetFour />} />
+          <Route path="*" element={<PasswordResetFour />} />
           <Route path="reset-5" element={<PasswordResetFive />} />
         </Route>
       </Route>
