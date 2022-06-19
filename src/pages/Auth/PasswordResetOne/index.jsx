@@ -9,7 +9,7 @@ export const PasswordResetOne = () => {
 
   useEffect(() => {}, []);
 
-  const sendLink = (e) => {
+  const forgotPassword = (e) => {
     e.preventDefault();
 
     const reset = async () => {
@@ -40,7 +40,7 @@ export const PasswordResetOne = () => {
           />
         </div>
       </div>
-      <Button stretch btnType="primary" text="Send Recovery Link" onClick={sendLink} />
+      <Button stretch btnType="primary" text="Send Recovery Link" onClick={forgotPassword} />
       <div className="signin-main-footer-text">
         <Text.Heading text="Don't have an account?" color="grey" size={14} weight={500} level={4} />
         <Link to="/signup">

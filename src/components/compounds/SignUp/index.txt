@@ -1,0 +1,124 @@
+import React from 'react';
+import { Text, Input, Button, Loader } from 'components';
+import { Link } from 'react-router-dom';
+import './style.css';
+import { useFormik } from 'formik';
+import { VALIDATIONS } from 'constants/validations';
+import * as yup from 'yup';
+import api from 'apis/routes';
+
+<<<<<<< HEAD
+const validationSchema = yup.object({
+  email: VALIDATIONS.email,
+  password: VALIDATIONS.password,
+});
+
+export const SignUp = () => {
+  const formik = useFormik({
+    initialValues: {
+      firstname: '',
+      lastname: '',
+      phonenumber: '',
+      email: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit: async (values, { setSubmitting }) => {
+      await api.auth.register(values);
+      setSubmitting(false);
+    },
+  });
+
+  return (
+    <div>
+      <form style={{ position: 'relative' }} onSubmit={formik.handleSubmit}>
+        <Loader open={formik.isSubmitting} />
+        <div className="signup-wrapper-signup-title">
+          <Text.Heading text="Sign Up" size={24} weight={500} level={1} />
+        </div>
+        <div className="signup-wrapper-name">
+          <div className="signup-col-firstname">
+            <Text.Heading text="First Name" size={16} weight={450} level={3} />
+            <Input.HalfLeftRound type="text" placeholder="" onChange={formik.handleChange} />
+          </div>
+          <div className="signup-col-lastname">
+            <Text.Heading text="Last Name" size={16} weight={450} level={3} />
+            <Input.HalfRightRound type="text" placeholder="" onChange={formik.handleChange} />
+          </div>
+        </div>
+        <div className="signup-wrapper-email">
+          <Text.Heading text="Email Address" size={16} weight={450} level={3} />
+          <Input.FullRound type="email" placeholder="" onChange={formik.handleChange} />
+          <div>{formik.errors.email && formik.touched.email && formik.errors.email}</div>
+        </div>
+        <div className="signup-wrapper-phone">
+          <Text.Heading text="Phone Number" size={16} weight={450} level={3} />
+          <Input.PhoneInput placeholder="" onChange={formik.handleChange} />
+        </div>
+        <div className="signup-wrapper-password">
+          <Text.Heading text="Set a Password" size={16} weight={450} level={3} />
+          <Input.FullRound type="password" placeholder="" onChange={formik.handleChange} />
+          <div>{formik.errors.password && formik.touched.password && formik.errors.password}</div>
+        </div>
+        <div className="signup-wrapper-button">
+          <Button.MainGreen text="Sign Up" />
+        </div>
+        <div className="signup-wrapper-divider">
+          <Text.Divider text="OR" />
+        </div>
+        <div className="signup-wrapper-google-button">
+          <Button.GoogleBtn text="Continue with Google" />
+        </div>
+        <div className="signup-main-footer-text">
+          <Text.Heading text="Already have an account?" color="grey" size={14} weight={500} level={4} />
+          <Link to="/">
+            <Text.Heading text="Sign In" color="green" size={14} weight={500} level={4} />
+          </Link>
+        </div>
+      </form>
+=======
+export const SignUp = () => (
+  <div>
+    <div className="signup-wrapper-signup-title">
+      <Text.Heading text="Sign Up" size={24} weight={500} level={1} />
+    </div>
+    <div className="signup-wrapper-name">
+      <div className="signup-col-firstname">
+        <Text.Heading text="First Name" size={16} weight={450} level={3} />
+        <Input.HalfLeftRound type="text" placeholder="" />
+      </div>
+      <div className="signup-col-lastname">
+        <Text.Heading text="Last Name" size={16} weight={450} level={3} />
+        <Input.HalfRightRound type="text" placeholder="" />
+      </div>
+    </div>
+    <div className="signup-wrapper-email">
+      <Text.Heading text="Email Address" size={16} weight={450} level={3} />
+      <Input.FullRound type="email" placeholder="" />
+    </div>
+    <div className="signup-wrapper-phone">
+      <Text.Heading text="Phone Number" size={16} weight={450} level={3} />
+      <Input.PhoneInput placeholder="" />
+    </div>
+    <div className="signup-wrapper-password">
+      <Text.Heading text="Set a Password" size={16} weight={450} level={3} />
+      <Input.FullRound type="password" placeholder="" />
+    </div>
+    <div className="signup-wrapper-button">
+      <Button type="submit" stretch text="Sign Up" />
+    </div>
+    <div className="signup-wrapper-divider">
+      <Text.Divider text="OR" />
+    </div>
+    <div className="signup-wrapper-google-button">
+      <Button.GoogleBtn text="Continue with Google" />
+    </div>
+    <div className="signup-main-footer-text">
+      <Text.Heading text="Already have an account?" color="grey" size={14} weight={500} level={4} />
+      <Link to="/signin">
+        <Text.Heading text="Sign In" color="green" size={14} weight={500} level={4} />
+      </Link>
+>>>>>>> origin/staging
+    </div>
+  );
+};

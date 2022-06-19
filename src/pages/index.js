@@ -1,4 +1,5 @@
 export { SignUpPage } from 'pages/Auth';
+export { SignUpPage2 } from 'pages/Auth';
 export { SignInPage } from 'pages/Auth';
 export { PasswordResetOne } from 'pages/Auth';
 export { PasswordResetTwo } from 'pages/Auth';

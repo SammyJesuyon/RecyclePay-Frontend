@@ -1,5 +1,5 @@
 import React from 'react';
-import 'layouts/authLayout.css';
+import 'layouts/layout.css';
 import PropTypes from 'prop-types';
 import { Text } from 'components';
 import clsx from 'clsx';

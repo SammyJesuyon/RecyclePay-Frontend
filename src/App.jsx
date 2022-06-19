@@ -15,6 +15,7 @@ import {
   PasswordResetTwo,
   SignInPage,
   SignUpPage,
+  SignUpPage2,
 } from 'pages';
 
 // for dashboard
@@ -25,11 +26,13 @@ const PrivateOutlet = () => {
     return <Navigate to="/" state={{ from: location }} />;
   }
   return (
+    // <DashboardLayout>
     <div>
       <Suspense fallback="loading...">
         <Outlet />
       </Suspense>
     </div>
+    // </DashboardLayout>
   );
 };
 
@@ -56,6 +59,7 @@ const App = () => (
         <Route index element={<SignInPage />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
+        <Route path={ROUTES.signUp2.path} element={<SignUpPage2 />} />
 
         <Route path={ROUTES.resetPassword.path} element={<PasswordResetRoutes />}>
           <Route index element={<PasswordResetOne />} />
