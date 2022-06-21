@@ -69,3 +69,51 @@
   left: 20px;
   top: 10px;
 }
+
+.reset-nav-content {
+  display: flex;
+  justify-content: center;
+  background: rgba(235, 254, 235, 0.4);
+  /* background: var(--primary-10); */
+  border-radius: 4px;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.reset-nav-content h1 {
+  text-align: center;
+}
+
+.wrapper-container {
+  min-height: 300px;
+  padding: 2rem;
+  width: 90%;
+}
+.wrapper-container button {
+  cursor: pointer;
+}
+.wrapper--email,
+.wrapper--label--email,
+.wrapper--input--email,
+.wrapper--text,
+.signin-main-footer-text {
+  margin: 1.5rem auto;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 700px) {
+  .reset-nav-content {
+    width: 100%;
+  }
+
+  .button-base {
+    padding: 1rem !important;
+  }
+
+  .lg {
+    width: 100% !important;
+  }
+}
