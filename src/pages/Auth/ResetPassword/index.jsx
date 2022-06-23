@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import routes from 'apis/routes';
 import { toast } from 'react-toastify';
 
-export const PasswordResetFour = () => {
+export const ResetPasswordPage = () => {
   const [markOtp, setMarkOtp] = useState('');
   const [markPassword, setMarkPassword] = useState('');
   const [markConfirm, setMarkConfirm] = useState('');

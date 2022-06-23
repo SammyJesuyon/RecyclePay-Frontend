@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {
   OverviewPage,
   PasswordResetFive,
-  PasswordResetFour,
+  ResetPasswordPage,
   PasswordResetOne,
   PasswordResetThree,
   PasswordResetTwo,
@@ -66,7 +66,7 @@ const App = () => (
           <Route path="reset-1" element={<PasswordResetOne />} />
           <Route path="reset-2" element={<PasswordResetTwo />} />
           <Route path="reset-3" element={<PasswordResetThree />} />
-          <Route path="*" element={<PasswordResetFour />} />
+          <Route path="*" element={<ResetPasswordPage />} />
           <Route path="reset-5" element={<PasswordResetFive />} />
         </Route>
       </Route>
