@@ -13,15 +13,17 @@ export const Input = ({ inputType, styleType, type, placeholder, ...props }) => 
   />
 );
 
-export const HalfLeftRound = ({ type, placeholder, ...props }) => (
-  <input className="form-input md l-round" type={type || 'text'} placeholder={placeholder} {...props} />
+export const HalfLeftRound = ({ type, placeholder, name, ...props }) => (
+  <input className="form-input md l-round" name={name} type={type || 'text'} placeholder={placeholder} {...props} />
 );
 
-export const HalfRightRound = ({ type, placeholder, ...props }) => (
-  <input className="form-input md r-round" type={type || 'text'} placeholder={placeholder} {...props} />
+export const HalfRightRound = ({ type, placeholder, name, ...props }) => (
+  <input className="form-input md r-round" name={name} type={type || 'text'} placeholder={placeholder} {...props} />
 );
 
-export const FullRound = (props) => <Input inputType="lg" styleType="full-round" {...props} />;
+export const FullRound = ({ type, placeholder, name, ...props }) => (
+  <input className="form-input lg full-round" name={name} type={type || 'text'} placeholder={placeholder} {...props} />
+);
 
 export const PhoneInput = ({ type, placeholder, ...props }) => (
   <div className="wrapper-phone-input">

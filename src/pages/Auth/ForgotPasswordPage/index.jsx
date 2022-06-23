@@ -4,26 +4,23 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import routes from '../../../apis/routes';
 
-export const PasswordResetOne = () => {
+export const ForgotPasswordPage = () => {
   const [userEmail, setEmail] = useState('');
 
   useEffect(() => {}, []);
 
   const forgotPassword = (e) => {
     e.preventDefault();
-
-    const reset = async () => {
+    (async () => {
       const res = await routes.auth.forgotPassword({ email: userEmail });
       if (res.status === 200) {
         toast.success('Email sent! Please check your mailbox');
       } else {
-        console.log(res.status, 'information');
         toast.error('Trouble');
       }
-    };
-
-    reset().then((r) => console.log(r));
+    })();
   };
+
   return (
     <div className="wrapper-container">
       <Text.Heading text="Reset Password" size={24} weight={500} level={1} />

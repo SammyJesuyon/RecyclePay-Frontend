@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import routes from 'apis/routes';
-import { setAuthorizationHeader } from 'apis';
+import { setAuthorizationHeader, removeAuthorizationHeader } from 'apis';
 
 const name = 'authentication';
 
@@ -10,14 +10,18 @@ const authUser = createAsyncThunk(`${name}/login`, async (values) => {
   return res.data;
 });
 
+const logoutUser = createAsyncThunk(`${name}/logout`, async () => {
+  const res = await routes.auth.logout();
+  removeAuthorizationHeader();
+  return res.data;
+});
+
 const initialState = { isAuthorized: false, loading: false, user: {} };
 
 const authSlice = createSlice({
   name,
   initialState,
-  reducers: {
-    logoutUser: () => initialState,
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(authUser.fulfilled, (state, action) => {
@@ -33,7 +37,8 @@ const authSlice = createSlice({
       })
       .addCase(authUser.rejected, (state) => {
         state.loading = false;
-      });
+      })
+      .addMatcher(isAnyOf(logoutUser.fulfilled, logoutUser.rejected), () => initialState);
   },
 });
 

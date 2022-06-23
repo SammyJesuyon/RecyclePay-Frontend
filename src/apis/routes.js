@@ -6,9 +6,9 @@ const auth = {
    * @param {{email: string, password: string}} data
    * @returns {Promise<AxiosResponse<any>>}
    */
-
   login: (data) => recyclePayRequest.post('/auth/login/', data),
-
+  logout: () => recyclePayRequest.get('/auth/logout/'),
+  
   /**
    * Send Forgot password Email
    * @param {{email: string}} data
@@ -26,7 +26,6 @@ const auth = {
    * @returns {Promise<AxiosResponse<{data: {name: string }}>>}
    */
   register: (data) => recyclePayRequest.post('/auth/register/', { data }),
-
   /**
    * Reset Password
    * @param {{new_password: string, otp: string, confirm_password: string}} data
@@ -35,9 +34,8 @@ const auth = {
    */
   reset_password: (encoded, data) => recyclePayRequest.post(`/auth/reset-password/${encoded}`, data),
 };
-
-const other = {};
-
-const routes = { auth, other };
-
+const dashboard = {
+  main: () => recyclePayRequest.get('/dashboard/'),
+};
+const routes = { auth, dashboard };
 export default routes;
