@@ -17,7 +17,7 @@ export const PasswordResetFour = () => {
 
   const resetPassword = (e) => {
     e.preventDefault();
-
+    alert('checking');
     const data = {
       new_password: markPassword,
       confirm_password: markConfirm,
