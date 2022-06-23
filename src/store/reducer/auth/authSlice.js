@@ -10,6 +10,11 @@ const authUser = createAsyncThunk(`${name}/login`, async (values) => {
   return res.data;
 });
 
+const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
+  const res = await api.auth.logout();
+  return res.data;
+});
+
 const initialState = { isAuthorized: false, loading: false, user: {} };
 
 const authSlice = createSlice({
@@ -17,6 +22,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logoutUser: () => initialState,
+    
   },
   extraReducers: (builder) => {
     builder
@@ -33,7 +39,12 @@ const authSlice = createSlice({
       })
       .addCase(authUser.rejected, (state) => {
         state.loading = false;
-      });
+      })
+      .addCase(logOutUser.fulfilled, (state) => {
+          state.isAuthorized = false;
+          state.loading = false;
+          state.user = {};
+      });;
   },
 });
 
