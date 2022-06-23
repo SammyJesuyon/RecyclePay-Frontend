@@ -6,3 +6,4 @@ export { ForgotPasswordPage } from './ForgotPasswordPage';
 export { SignInLoading } from './SignInLoading';
 export { SignUpLoading } from './SignUpLoading';
 export { ResetPasswordPage } from './ResetPasswordPage';
+export { VerifyPage } from './VerifyPage';
