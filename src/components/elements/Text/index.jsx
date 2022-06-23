@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ReactComponent as Hline } from './hline.svg';
 
-// import clsx from 'clsx';
-
 const colors = {
   'primary-main': 'var(--primary-main)',
   green: 'var(--primary-80)',
@@ -44,28 +42,8 @@ export const Divider = ({ text, children, ...props }) => (
   </div>
 );
 
-export const RememberMe = ({ ...props }) => (
-  <div
-    style={{
-      fontSize: 14,
-      fontWeight: 500,
-      color: 'rgba(24, 24, 24, 0.5)',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-    }}
-    {...props}
-  >
-    <input style={{ margin: '0 8px' }} type="checkbox" />
-    <p style={{ marginRight: 'auto' }}>Remember me</p>
-    <p style={{ marginRight: '8px' }}>Forgot Password?</p>
-  </div>
-);
-
 Text.Heading = Heading;
 Text.Divider = Divider;
-Text.RememberMe = RememberMe;
 
 const basePropTypes = {
   weight: PropTypes.oneOf([400, 450, 500, 700]),
@@ -88,5 +66,3 @@ Divider.propTypes = {
   text: PropTypes.string,
   children: PropTypes.node,
 };
-
-RememberMe.propTypes = {};

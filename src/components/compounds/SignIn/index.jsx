@@ -7,6 +7,7 @@ import { AUTH_ACTIONS } from 'store/reducer/auth/authSlice';
 import { useFormik } from 'formik';
 import { VALIDATIONS } from 'constants/validations';
 import * as yup from 'yup';
+import { ROUTES } from 'constants/routes';
 
 const validationSchema = yup.object({
   email: VALIDATIONS.email,
@@ -48,7 +49,23 @@ export const SignIn = () => {
           <div>{formik.errors.password && formik.touched.password && formik.errors.password}</div>
         </div>
         <div className="signin-wrapper-remember-me">
-          <Text.RememberMe />
+          <div
+            style={{
+              fontSize: 14,
+              fontWeight: 500,
+              color: 'rgba(24, 24, 24, 0.5)',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+            }}
+          >
+            <input style={{ margin: '0 8px' }} type="checkbox" />
+            <p style={{ marginRight: 'auto' }}>Remember me</p>
+            <Link to={ROUTES.forgotPassword.path} style={{ marginRight: '8px' }}>
+              Forgot Password?
+            </Link>
+          </div>
         </div>
         <div className="signin-wrapper-button">
           <Button type="submit" stretch text="Sign In" />

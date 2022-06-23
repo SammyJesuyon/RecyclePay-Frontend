@@ -7,6 +7,8 @@ const auth = {
    * @returns {Promise<AxiosResponse<any>>}
    */
   login: (data) => recyclePayRequest.post('/auth/login/', data),
+  logout: () => recyclePayRequest.get('/auth/logout/'),
+  
   /**
    * Send Forgot password Email
    * @param {{email: string}} data

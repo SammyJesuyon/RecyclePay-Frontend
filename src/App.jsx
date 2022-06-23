@@ -6,17 +6,8 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {
-  OverviewPage,
-  PasswordResetFive,
-  PasswordResetFour,
-  PasswordResetOne,
-  PasswordResetThree,
-  PasswordResetTwo,
-  SignInPage,
-  SignUpPage,
-  SignUpPage2,
-} from 'pages';
+import { OverviewPage, ResetPasswordPage, SignInPage, SignUpPage } from 'pages';
+import { AuthNotFoundPage, ForgotPasswordPage } from 'pages/Auth';
 
 // for dashboard
 const PrivateOutlet = () => {
@@ -50,8 +41,6 @@ const ProtectedOutlet = () => {
   );
 };
 
-const PasswordResetRoutes = () => <Outlet />;
-
 const App = () => (
   <>
     <Routes>
@@ -59,22 +48,17 @@ const App = () => (
         <Route index element={<SignInPage />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
-        <Route path={ROUTES.signUp2.path} element={<SignUpPage2 />} />
-
-        <Route path={ROUTES.resetPassword.path} element={<PasswordResetRoutes />}>
-          <Route index element={<PasswordResetOne />} />
-          <Route path="reset-1" element={<PasswordResetOne />} />
-          <Route path="reset-2" element={<PasswordResetTwo />} />
-          <Route path="reset-3" element={<PasswordResetThree />} />
-          <Route path="*" element={<PasswordResetFour />} />
-          <Route path="reset-5" element={<PasswordResetFive />} />
-        </Route>
+        <Route path={ROUTES.forgotPassword.path} element={<ForgotPasswordPage />} />
+        <Route path={ROUTES.resetPassword.path} element={<ResetPasswordPage />} />
+        <Route path="*" element={<AuthNotFoundPage />} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
         <Route path={ROUTES.overview.path} element={<OverviewPage />} />
         <Route index element={<Navigate to={ROUTES.overview.path} />} />
+        <Route path="*" element={<div>Not Found!</div>} />
       </Route>
+      <Route path="*" element={<div>Not Found!</div>} />
     </Routes>
     <ToastContainer
       position="bottom-left"
