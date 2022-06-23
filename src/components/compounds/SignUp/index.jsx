@@ -24,12 +24,14 @@ export const SignUp = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const formData2 = new FormData();
-    formData2.append('first_name', formData.first_name);
-    formData2.append('last_name', formData.last_name);
-    formData2.append('email', formData.email);
-    formData2.append('password', formData.password);
-    const res = await api.auth.register(formData2);
+    const data = {
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      email: formData.email,
+      password: formData.password,
+    };
+
+    const res = await api.auth.register(data);
     setSuccess(true);
 
     // toggle to another view
