@@ -24,12 +24,10 @@ export const ResetPasswordPage = () => {
       otp: markOtp,
     };
 
-    const reset = async () => {
+    (async () => {
       const res = await routes.auth.reset_password(encodedEmail, data);
       toast.success(res);
-    };
-
-    reset().then((r) => console.log(r));
+    })();
   };
 
   return (

@@ -9,7 +9,7 @@ export const ROUTES = {
     path: 'login',
   },
   resetPassword: {
-    path: '/password',
+    path: 'reset-password',
   },
   forgotPassword: {
     path: 'forgot-password',
