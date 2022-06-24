@@ -7,9 +7,9 @@ export const DashHeader = () => (
       <SearchBar />
     </div>
     <div className="name-holder">
-      <Text text="David Michael" />
+      <Text color="white" text="Ifeanyi Omeata" />
       <span className="h-space" />
-      <span className="name-icon">Y</span>
+      <span className="name-icon">IO</span>
     </div>
   </div>
 );
