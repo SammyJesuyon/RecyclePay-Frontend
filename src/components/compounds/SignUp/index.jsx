@@ -11,12 +11,10 @@ const initialState = {
   email: '',
   password: '',
 };
-
 export const SignUp = () => {
   const [isSuccess, setSuccess] = useState(false);
   const [formData, setFormData] = useState(initialState);
   const navigate = useNavigate();
-
   const onHandleChange = (e) => {
     formData[e.target.name] = e.target.value;
     setFormData(formData);
@@ -35,14 +33,12 @@ export const SignUp = () => {
     setSuccess(true);
 
     // toggle to another view
-
     if (res.status === 201) {
       navigate('/signup2');
     } else {
       toast.success('Email already registered');
     }
   };
-
   return (
     <div>
       {isSuccess ? (

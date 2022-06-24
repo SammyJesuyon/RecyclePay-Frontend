@@ -25,7 +25,7 @@ const auth = {
    * }} data - object to register
    * @returns {Promise<AxiosResponse<{data: {name: string }}>>}
    */
-  register: (data) => recyclePayRequest.post('/auth/register/', { data }),
+  register: (data) => recyclePayRequest.post('/auth/register/', data),
   /**
    * Reset Password
    * @param {{new_password: string, otp: string, confirm_password: string}} data
