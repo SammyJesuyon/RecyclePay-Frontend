@@ -1,11 +1,11 @@
 // import React, { useState, useEffect } from 'react';
-import { DashHeader, SideBar, Text, RecentPickups, Welcome } from 'components';
+import { DashHeader, SideBar, Text, RecentPickups, Welcome3 } from 'components';
 import './index.css';
-import { pickups } from 'components/molecules/RecentPickups/pickups';
+import { pickupsindtwo } from 'components/molecules/RecentPickups/pickupsindtwo';
 // import routes from 'apis/routes';
 // import { userData } from './dummy';
 
-export const OverviewPage = () => (
+export const IndividualThree = () => (
   // const [userActivities, setUserActivities] = useState('');
   // const getUserActivities = async () => {
   //   const res = await routes.dashboard.main();
@@ -24,17 +24,17 @@ export const OverviewPage = () => (
         <DashHeader />
       </div>
       <div className="welcome">
-        <Welcome />
+        <Welcome3 />
       </div>
       <div className="head-text">
         <Text>Recent Pickups</Text>
         <div className="right-text">
           <Text>Your Total Points</Text>
-          &nbsp;1769
+          &nbsp;123
         </div>
       </div>
       <div>
-        {pickups.map((item) => (
+        {pickupsindtwo.map((item) => (
           <RecentPickups {...item} key={item.id} />
         ))}
       </div>

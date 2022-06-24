@@ -30,4 +30,15 @@ export const ROUTES = {
   verifyEncoded: {
     path: ':encodedEmail',
   },
+  individualone: {
+    path: 'individualone',
+  },
+
+  individualtwo: {
+    path: 'individualtwo',
+  },
+
+  individualthree: {
+    path: 'individualthree',
+  },
 };

@@ -4,3 +4,6 @@ export { VerifyPage } from 'pages/Auth';
 export { SignInPage } from 'pages/Auth';
 export { ResetPasswordPage } from 'pages/Auth';
 export { OverviewPage } from 'pages/dashboard';
+export { IndividualOne } from 'pages/IndividualOne';
+export { IndividualTwo } from 'pages/IndividualTwo';
+export { IndividualThree } from 'pages/IndividualThree';

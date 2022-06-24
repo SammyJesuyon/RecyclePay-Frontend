@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export const RecentPickups = ({ pickupId, measurement, points, status, pickupDate, collectionOfficer }) => (
   <div className="pickup-container">
     <div className="dot-info">
-      <div className="dot" style={{ backgroundColor: 'green' }} />
+      <div className="dot" style={{ backgroundColor: 'grey' }} />
     </div>
 
     <div className="info">
