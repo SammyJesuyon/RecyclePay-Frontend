@@ -2,7 +2,7 @@ import { Text } from 'components/elements';
 import './style.css';
 import PropTypes from 'prop-types';
 
-export const RecentPickups = ({ pickupId, measurement, points, status, pickupDate, collectionOfficer }) => (
+export const RecentPickups = ({ customer, pickupDate, address, measurement }) => (
   <div className="pickup-container">
     <div className="dot-info">
       <div className="dot" style={{ backgroundColor: 'green' }} />
@@ -10,21 +10,14 @@ export const RecentPickups = ({ pickupId, measurement, points, status, pickupDat
 
     <div className="info">
       <div>
-        <Text className="title-info">ID</Text>
+        <Text className="title-info">Name of Customer</Text>
       </div>
       <div>
-        <Text>{pickupId}</Text>
+        <Text>{customer}</Text>
       </div>
     </div>
 
-    <div className="info">
-      <div>
-        <Text>Measurement</Text>
-      </div>
-      <div>
-        <Text>{measurement}KG</Text>
-      </div>
-    </div>
+    {/* 
 
     <div className="info">
       <div>
@@ -42,11 +35,11 @@ export const RecentPickups = ({ pickupId, measurement, points, status, pickupDat
       <div>
         <Text>{status}</Text>
       </div>
-    </div>
+    </div> */}
 
     <div className="info">
       <div>
-        <Text>Date of Pickup</Text>
+        <Text>Pickup Date</Text>
       </div>
       <div>
         <Text>{pickupDate}</Text>
@@ -55,20 +48,28 @@ export const RecentPickups = ({ pickupId, measurement, points, status, pickupDat
 
     <div className="info">
       <div>
-        <Text>Collection Officer</Text>
+        <Text>Pickup Location</Text>
       </div>
       <div>
-        <Text>{collectionOfficer}</Text>
+        <Text>{address}</Text>
+      </div>
+    </div>
+    <div className="info">
+      <div>
+        <Text>Recorded Weight</Text>
+      </div>
+      <div>
+        <Text>{measurement}KG</Text>
       </div>
     </div>
   </div>
 );
 
 RecentPickups.propTypes = {
-  pickupId: PropTypes.string,
+  customer: PropTypes.string,
   measurement: PropTypes.number,
-  points: PropTypes.number,
-  status: PropTypes.string,
+  // points: PropTypes.number,
+  address: PropTypes.string,
   pickupDate: PropTypes.string,
-  collectionOfficer: PropTypes.string,
+  // collectionOfficer: PropTypes.string,
 };

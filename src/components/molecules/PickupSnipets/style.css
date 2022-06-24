@@ -8,6 +8,8 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+  padding-bottom: 10%;
+  margin-bottom: 2%;
 }
 
 .wrapper {
@@ -115,4 +117,10 @@
     display: grid;
     place-items: center;
   }
+}
+
+.pane-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

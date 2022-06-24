@@ -18,7 +18,7 @@ PickupSnipet.propTypes = {
   text: PropTypes.string,
 };
 
-export const PickupSnipets = ({ customer, date, location }) => (
+export const PickupSnipets = ({ customer, date, address }) => (
   <div className="container">
     <div className="wrapper">
       <div className="div">
@@ -26,17 +26,35 @@ export const PickupSnipets = ({ customer, date, location }) => (
           <div className="dot" />
         </div>
       </div>
-      <div className="div">
-        <PickupSnipet title="Name of Customer" text={customer} />
+      <div className="pane-info">
+        <div className="div">
+          <PickupSnipet title="Name of Customer" />
+        </div>
+        <div>
+          <Text>{customer}</Text>
+        </div>
       </div>
-      <div className="div">
-        <PickupSnipet title="Pickup Date" text={date} />
+
+      <div className="pane-info">
+        <div className="div">
+          <PickupSnipet title="Pickup Date" />
+        </div>
+        <div>
+          <Text>{date}</Text>
+        </div>
       </div>
-      <div className="div">
-        <PickupSnipet title="Pickup Location" text={location} />
+
+      <div className="pane-info">
+        <div className="div">
+          <PickupSnipet title="Pickup Location" />
+        </div>
+        <div>
+          <Text>{address}</Text>
+        </div>
       </div>
+
       <div className="div btn">
-        <Button round btnType="secondary" text="Request Pickup" />
+        <Button round btnType="secondary" text="Register Pickup" />
       </div>
     </div>
   </div>
@@ -45,5 +63,5 @@ export const PickupSnipets = ({ customer, date, location }) => (
 PickupSnipets.propTypes = {
   customer: PropTypes.string,
   date: PropTypes.string,
-  location: PropTypes.string,
+  address: PropTypes.string,
 };

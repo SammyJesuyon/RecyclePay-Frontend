@@ -30,4 +30,16 @@ export const ROUTES = {
   verifyEncoded: {
     path: ':encodedEmail',
   },
+  CollectorOne: {
+    path: 'collector1',
+  },
+  CollectorTwo: {
+    path: 'collector2',
+  },
+  CollectorThree: {
+    path: 'collector3',
+  },
+  CollectorFour: {
+    path: 'collector4',
+  },
 };
