@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {
-  ResetPasswordPage,
+  // ResetPasswordPage,
   SignInPage,
   SignUpPage,
   VerifyPage,
@@ -16,6 +16,15 @@ import {
   CollectorThree,
   CollectorFour,
   // OverviewPage,
+  // OverviewPage,
+  ResetPasswordPage,
+  // SignInPage,
+  // SignUpPage,
+  SignUpPage2,
+  // VerifyPage,
+  IndividualOne,
+  IndividualTwo,
+  IndividualThree,
 } from 'pages';
 import { AuthNotFoundPage, ForgotPasswordPage } from 'pages/Auth';
 
@@ -64,10 +73,11 @@ const App = () => (
           <Route path={ROUTES.verifyEncoded.path} element={<VerifyPage />} />
         </Route>
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
-        {/* <Route path={ROUTES.CollectorOne.path} element={<CollectorOne />} /> */}
+        <Route path={ROUTES.CollectorOne.path} element={<CollectorOne />} />
         <Route path={ROUTES.CollectorTwo.path} element={<CollectorTwo />} />
         <Route path={ROUTES.CollectorThree.path} element={<CollectorThree />} />
         <Route path={ROUTES.CollectorFour.path} element={<CollectorFour />} />
+        <Route path={ROUTES.signUp2.path} element={<SignUpPage2 />} />
         <Route path={ROUTES.forgotPassword.path} element={<ForgotPasswordPage />} />
         <Route path={ROUTES.resetPassword.path} element={<ResetOutlet />}>
           <Route path={ROUTES.resetEncoded.path} element={<ResetPasswordPage />} />
@@ -76,7 +86,10 @@ const App = () => (
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
-        <Route path={ROUTES.overview.path} element={<CollectorOne />} />
+        <Route path={ROUTES.overview.path} element={<IndividualOne />} />
+        <Route path={ROUTES.individualone.path} element={<IndividualOne />} />
+        <Route path={ROUTES.individualtwo.path} element={<IndividualTwo />} />
+        <Route path={ROUTES.individualthree.path} element={<IndividualThree />} />
         <Route index element={<Navigate to={ROUTES.overview.path} />} />
         <Route path="*" element={<div>Not Found!</div>} />
       </Route>

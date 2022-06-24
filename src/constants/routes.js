@@ -42,4 +42,15 @@ export const ROUTES = {
   CollectorFour: {
     path: 'collector4',
   },
+  individualone: {
+    path: 'individualone',
+  },
+
+  individualtwo: {
+    path: 'individualtwo',
+  },
+
+  individualthree: {
+    path: 'individualthree',
+  },
 };

@@ -8,3 +8,6 @@ export { CollectorOne } from 'pages/collector1';
 export { CollectorTwo } from 'pages/collector2';
 export { CollectorThree } from 'pages/collector3';
 export { CollectorFour } from 'pages/collector4';
+export { IndividualOne } from 'pages/IndividualOne';
+export { IndividualTwo } from 'pages/IndividualTwo';
+export { IndividualThree } from 'pages/IndividualThree';

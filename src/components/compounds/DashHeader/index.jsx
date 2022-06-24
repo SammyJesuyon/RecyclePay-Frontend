@@ -11,6 +11,9 @@ export const DashHeader = ({ name, initial }) => (
       <Text text={name} />
       <span className="h-space" />
       <span className="name-icon">{initial}</span>
+      <Text color="white" text="Ifeanyi Omeata" />
+      <span className="h-space" />
+      <span className="name-icon">IO</span>
     </div>
   </div>
 );
