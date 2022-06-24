@@ -63,9 +63,15 @@ export const SideBar = () => {
 
       <div className="space" />
 
-      <button type="button" className="box remove-btn-prop" onClick={logout}>
+      <button
+        type="button"
+        className="box remove-btn-prop"
+        onClick={() => {
+          logout();
+        }}
+      >
         <Text>Log Out</Text>
-        <Logout className="log" />
+        <Logout className="log" onClick={logout} />
       </button>
 
       <div className="box">
