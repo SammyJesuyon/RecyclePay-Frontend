@@ -12,6 +12,9 @@ export const ROUTES = {
   resetPassword: {
     path: 'reset-password',
   },
+  resetEncoded: {
+    path: ':encodedEmail',
+  },
   forgotPassword: {
     path: 'forgot-password',
   },
