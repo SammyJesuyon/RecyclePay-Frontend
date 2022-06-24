@@ -11,13 +11,13 @@ export const ResetPasswordPage = () => {
   const [markConfirm, setMarkConfirm] = useState('');
 
   const params = useParams();
-  const encodedEmail = params['*'];
+  const encodedEmail = params.encodedEmail;
+  console.log(encodedEmail);
 
   useEffect(() => {}, []);
 
   const resetPassword = (e) => {
     e.preventDefault();
-    alert('checking');
     const data = {
       new_password: markPassword,
       confirm_password: markConfirm,
@@ -27,6 +27,7 @@ export const ResetPasswordPage = () => {
     (async () => {
       const res = await routes.auth.reset_password(encodedEmail, data);
       toast.success(res);
+      if (res && res.status === 200) toast.success('Password has been reset successfully');
     })();
   };
 

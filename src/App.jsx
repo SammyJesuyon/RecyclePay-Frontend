@@ -42,6 +42,7 @@ const ProtectedOutlet = () => {
 };
 
 const VerifyOutlet = () => <Outlet />;
+const ResetOutlet = () => <Outlet />;
 
 const App = () => (
   <>
@@ -54,7 +55,9 @@ const App = () => (
         </Route>
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
         <Route path={ROUTES.forgotPassword.path} element={<ForgotPasswordPage />} />
-        <Route path={ROUTES.resetPassword.path} element={<ResetPasswordPage />} />
+        <Route path={ROUTES.resetPassword.path} element={<ResetOutlet />}>
+          <Route path={ROUTES.resetEncoded.path} element={<ResetPasswordPage />} />
+        </Route>
         <Route path="*" element={<AuthNotFoundPage />} />
       </Route>
 
